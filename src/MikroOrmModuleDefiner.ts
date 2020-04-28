@@ -10,6 +10,8 @@ import {
 
 import {DataMappersCollection} from "./DataMappersCollection";
 
+const ENTITY_MANAGER_SERVICE_NAME = 'mikroEntityManager';
+const MODULE_NAME = 'MikroOrmModulesDefiner';
 
 export class MikroOrmModuleDefiner implements ModulesDefiner {
 
@@ -21,7 +23,7 @@ export class MikroOrmModuleDefiner implements ModulesDefiner {
     }
 
     public getName(): string {
-        return 'MikroOrmModulesDefiner';
+        return MODULE_NAME;
     }
 
     public init(): void {
@@ -59,7 +61,7 @@ export class MikroOrmModuleDefiner implements ModulesDefiner {
         const entityManager = orm.em;
         collection.generateRepositoriesAsServices(entityManager, container);
 
-        container.registerServiceBuilded('mikroEntityManager', entityManager);
+        container.registerServiceBuilded(ENTITY_MANAGER_SERVICE_NAME, entityManager);
 
         this.app.setMiddleware((_req, _res, next) => {
             RequestContext.create(entityManager, next);

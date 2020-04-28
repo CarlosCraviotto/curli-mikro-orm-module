@@ -1,10 +1,10 @@
-import {AnyEntity, EntityClassGroup} from "mikro-orm/dist/typings";
+
 import {EntityManager} from "mikro-orm";
 import {DependencyInjection} from 'curli-types';
+import {Mapper} from "./Mapper";
+import {HandleDataMappers} from "./HandleDataMappers";
 
-type Mapper = EntityClassGroup<AnyEntity>;
-
-export class DataMappersCollection {
+export class DataMappersCollection implements HandleDataMappers{
 
     private dataMapperCollection: Mapper[];
 
@@ -12,7 +12,7 @@ export class DataMappersCollection {
         this.dataMapperCollection = [];
     }
 
-    public addDataMapper(mapper: Mapper) {
+    public addDataMapper(mapper: Mapper): void {
         this.dataMapperCollection.push(mapper);
     }
 
@@ -25,12 +25,11 @@ export class DataMappersCollection {
         container: DependencyInjection
     ) {
         this.dataMapperCollection.forEach((mapper: Mapper) => {
-            const mapperE: EntityClassGroup<any> = (mapper as EntityClassGroup<any>);
-            let name: string = mapperE.schema.name;
+            let name: string = mapper.schema.name;
 
             name = name.toLowerCase() + 'MikroRepository';
 
-            const repository = entityManager.getRepository(mapperE.entity);
+            const repository = entityManager.getRepository(mapper.entity);
             container.registerServiceBuilded(name, repository);
         });
     }

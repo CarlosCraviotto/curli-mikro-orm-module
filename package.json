@@ -1,6 +1,6 @@
 {
   "name": "curli-mikro-orm-module",
-  "version": "0.0.1-beta.0",
+  "version": "0.0.1-beta.1",
   "description": "Mikro ORM implementation for the Curli framework.",
   "main": "index",
   "scripts": {
