@@ -1,0 +1,1 @@
+export {MikroOrmModuleDefiner} from './MikroOrmModuleDefiner';

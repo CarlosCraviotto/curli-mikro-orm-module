@@ -1,0 +1,75 @@
+{
+  "name": "curli-mikro-orm-module",
+  "version": "0.0.1-beta.0",
+  "description": "Mikro ORM implementation for the Curli framework.",
+  "main": "index",
+  "scripts": {
+    "build:clean": "npm run clean && npm run build",
+    "build": "tsc",
+    "clean": "rimraf ./dist",
+    "test": "mocha -r ts-node/register src/__tests__/unit/*.test.ts",
+    "test:coverage": "nyc -r lcov -e .ts -x \"src/__tests__/unit/*.test.ts\" npm run test",
+    "lint": "eslint --ext \".js,.jsx,.ts,.tsx\" \"./src\"",
+    "lint:fix": "eslint --fix --ext \".js,.jsx,.ts,.tsx\" \"./src\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosCraviotto/curli-mikro-orm-module.git"
+  },
+  "keywords": [
+    "curli",
+    "Mikro",
+    "ORM",
+    "framework",
+    "database",
+    "db",
+    "typescript",
+    "javascript"
+  ],
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    ".eslintrc.js",
+    ".eslintignore",
+    "index.js",
+    "index.ts",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "author": "Carlos Juan Craviotto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CarlosCraviotto/curli-mikro-orm-module/issues"
+  },
+  "homepage": "https://github.com/CarlosCraviotto/curli-mikro-orm-module#readme",
+  "dependencies": {
+    "curli-types": "0.0.1-beta.10",
+    "mikro-orm": "3.6.6"
+  },
+  "devDependencies": {
+    "@types/sinon": "9.0.0",
+    "@types/mocha": "7.0.2",
+    "@types/node": "^13.11.0",
+    "@typescript-eslint/eslint-plugin": "^2.6.0",
+    "@typescript-eslint/parser": "^2.6.0",
+    "@types/chai": "^4.2.11",
+    "chai": "^4.2.0",
+    "sinon": "9.0.2",
+    "ts-mock-imports": "1.3.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-mocha": "^6.3.0",
+    "nyc": "^15.0.0",
+    "coveralls": "^3.0.11",
+    "prettier": "^2.0.3",
+    "rimraf": "^3.0.0",
+    "mocha": "^7.1.1",
+    "ts-node": "^8.8.1",
+    "typescript": "^3.1.6"
+  }
+}
