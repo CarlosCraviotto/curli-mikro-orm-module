@@ -26,7 +26,7 @@ export class MikroOrmModuleDefiner implements ModulesDefiner {
         return MODULE_NAME;
     }
 
-    public init(): void {
+    public beforeCallModules(): void {
         this.container = this.app.getContainer();
         this.collection = new DataMappersCollection();
     }
@@ -43,7 +43,7 @@ export class MikroOrmModuleDefiner implements ModulesDefiner {
         module.registerDataMappers((this.collection as DataMappersCollection));
     }
 
-    public async afterCalledModules(): Promise<void> {
+    public async afterCallModules(): Promise<void> {
 
         const collection = (this.collection as DataMappersCollection),
             entities = collection.getDataMapperCollection(),

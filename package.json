@@ -1,6 +1,6 @@
 {
   "name": "curli-mikro-orm-module",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.2",
   "description": "Mikro ORM implementation for the Curli framework.",
   "main": "index",
   "scripts": {
@@ -47,7 +47,7 @@
   },
   "homepage": "https://github.com/CarlosCraviotto/curli-mikro-orm-module#readme",
   "dependencies": {
-    "curli-types": "0.0.1-beta.10",
+    "curli-types": "0.0.1-beta.11",
     "mikro-orm": "3.6.6"
   },
   "devDependencies": {

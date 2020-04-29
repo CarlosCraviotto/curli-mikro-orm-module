@@ -72,8 +72,8 @@ describe('Config class tests', function () {
             listOfValuesAskedToTheContainer.push(propertyName);
         }
 
-        mikroOrmModuleDefiner.init();
-        await mikroOrmModuleDefiner.afterCalledModules();
+        mikroOrmModuleDefiner.beforeCallModules();
+        await mikroOrmModuleDefiner.afterCallModules();
 
         chai.assert.deepEqual(listExpected, listOfValuesAskedToTheContainer);
 
@@ -104,9 +104,9 @@ describe('Config class tests', function () {
         }
 
 
-        mikroOrmModuleDefiner.init();
+        mikroOrmModuleDefiner.beforeCallModules();
         mikroOrmModuleDefiner.callMethodInModules(module);
-        await mikroOrmModuleDefiner.afterCalledModules();
+        await mikroOrmModuleDefiner.afterCallModules();
 
         chai.assert.deepEqual(listExpected, listOfServicesCreated);
     });
