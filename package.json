@@ -1,6 +1,6 @@
 {
   "name": "curli-mikro-orm-module",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta.3",
   "description": "Mikro ORM implementation for the Curli framework.",
   "main": "index",
   "scripts": {
@@ -10,7 +10,10 @@
     "test": "mocha -r ts-node/register src/__tests__/unit/*.test.ts",
     "test:coverage": "nyc -r lcov -e .ts -x \"src/__tests__/unit/*.test.ts\" npm run test",
     "lint": "eslint --ext \".js,.jsx,.ts,.tsx\" \"./src\"",
-    "lint:fix": "eslint --fix --ext \".js,.jsx,.ts,.tsx\" \"./src\""
+    "lint:fix": "eslint --fix --ext \".js,.jsx,.ts,.tsx\" \"./src\"",
+    "npm:alone": "npm install && npm run clean && npm run build && npm run test:coverage",
+    "npm": "npm run npm:alone && npm publish",
+    "npm:beta": "npm run npm:alone && npm publish --tag beta"
   },
   "repository": {
     "type": "git",
@@ -47,8 +50,8 @@
   },
   "homepage": "https://github.com/CarlosCraviotto/curli-mikro-orm-module#readme",
   "dependencies": {
-    "curli-types": "0.0.1-beta.11",
-    "mikro-orm": "3.6.6"
+    "curli-types": "0.0.1-beta.12",
+    "mikro-orm": "3.6.13"
   },
   "devDependencies": {
     "@types/sinon": "9.0.0",
