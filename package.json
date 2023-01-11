@@ -51,7 +51,7 @@
   "homepage": "https://github.com/CarlosCraviotto/curli-mikro-orm-module#readme",
   "dependencies": {
     "curli-types": "0.0.1-beta.12",
-    "mikro-orm": "3.6.13"
+    "mikro-orm": "5.6.6"
   },
   "devDependencies": {
     "@types/sinon": "9.0.0",
